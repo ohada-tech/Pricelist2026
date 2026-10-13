@@ -832,6 +832,14 @@ body {
 .cards-grid>:only-child,.vo-grid>:only-child{grid-column:span 6}
 @media (max-width:640px){.logo-bar{flex-direction:column;align-items:flex-start}.cards-grid,.cards-grid.cols2,.vo-grid{grid-template-columns:1fr}.cards-grid>*,.vo-grid>*{grid-column:auto!important}}
 </style>
+
+<style id="card-hover">
+/* צל עדין + סקייל עדין במעבר עכבר */
+.card,.vo-card,.video-row,.note-card{box-shadow:0 1px 2px rgba(17,24,39,.04),0 4px 14px rgba(17,24,39,.06);transition:border-color .3s,box-shadow .3s ease,transform .3s ease;will-change:transform}
+.card:hover,.vo-card:hover,.video-row:hover,.note-card:hover{transform:scale(1.015);box-shadow:0 2px 4px rgba(17,24,39,.05),0 12px 28px rgba(17,24,39,.10)}
+@media (prefers-reduced-motion:reduce){.card:hover,.vo-card:hover,.video-row:hover,.note-card:hover{transform:none}}
+@media print{.card,.vo-card,.video-row,.note-card{box-shadow:none!important;transform:none!important}}
+</style>
 </head>
 <body class="">
 
