@@ -832,6 +832,24 @@ body {
 .cards-grid>:only-child,.vo-grid>:only-child{grid-column:span 6}
 @media (max-width:640px){.logo-bar{flex-direction:column;align-items:flex-start}.cards-grid,.cards-grid.cols2,.vo-grid{grid-template-columns:1fr}.cards-grid>*,.vo-grid>*{grid-column:auto!important}}
 </style>
+
+<style id="card-hover">
+/* צל עדין לכל הכרטיסיות + הגדלה קטנה במעבר עכבר */
+.card,.video-row,.vo-card,.note-card,.agency-block{
+  box-shadow:0 1px 2px rgba(17,24,39,.04),0 6px 18px rgba(17,24,39,.06);
+  transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease,border-color .28s ease;
+  transform-origin:center;will-change:transform}
+.card:hover,.vo-card:hover,.note-card:hover{
+  transform:scale(1.03);
+  box-shadow:0 2px 6px rgba(17,24,39,.05),0 16px 36px rgba(17,24,39,.10);z-index:2}
+.video-row:hover{transform:scale(1.02);box-shadow:0 2px 6px rgba(17,24,39,.05),0 18px 40px rgba(17,24,39,.10);z-index:2}
+.agency-block:hover{transform:scale(1.01);box-shadow:0 2px 6px rgba(17,24,39,.05),0 18px 40px rgba(17,24,39,.09)}
+.cards-grid,.video-grid,.vo-grid,.notes-grid{position:relative}
+.card,.video-row,.vo-card,.note-card{position:relative}
+body.editing .card:hover,body.editing .video-row:hover,body.editing .vo-card:hover,body.editing .note-card:hover,body.editing .agency-block:hover{transform:none}
+@media (hover:none){.card:hover,.video-row:hover,.vo-card:hover,.note-card:hover,.agency-block:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.card,.video-row,.vo-card,.note-card,.agency-block{transition:none}}
+</style>
 </head>
 <body class="">
 
